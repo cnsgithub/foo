@@ -1,0 +1,7 @@
+<script>
+  if(window.opener) {
+    document.innerHTML = 'Oops, the opener got redirected to a phishing site...';
+    opener.location = 'https://primefaces.org/store/'; // or the phishing alternative ;-)
+  }
+  else document.innerHTML = 'Phew!';
+</script>
