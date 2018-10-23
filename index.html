@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </head>
-  <body>
     <script>
-      if(window.opener) {
-        document.innerHTML = '<h1>Oops, the opener got redirected to a phishing site...</h1>';
-        opener.location = 'https://primefaces.org/store/'; // or the phishing alternative ;-)
+      function boom() {
+        if(window.opener) {
+          document.getElementById('foo').innerHTML = '<h1>Oops, the opener got redirected to a phishing site...</h1>';
+          opener.location = 'https://primefaces.org/store/'; // or the phishing alternative ;-)
+        }
+        else {
+          document.getElementById('foo') = '<h1>Phew!</h1>';
+        }
       }
-      else document.innerHTML = '<h1>Phew!</h1>';
     </script>  
+  </head>
+  <body onload="boom()">
+    <h1 id="foo"></h1>
   </body>
 </html>
