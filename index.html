@@ -4,11 +4,11 @@
     <script>
       function boom() {
         if(window.opener) {
-          document.getElementById('foo').innerHTML = '<h1>Oops, the opener got redirected to a phishing site...</h1>';
+          document.getElementById('foo').innerHTML = 'Oops, the opener got redirected to a phishing site...';
           opener.location = 'https://primefaces.org/store/'; // or the phishing alternative ;-)
         }
         else {
-          document.getElementById('foo').innerHTML = '<h1>Phew!</h1>';
+          document.getElementById('foo').innerHTML = 'Phew!';
         }
       }
     </script>  
